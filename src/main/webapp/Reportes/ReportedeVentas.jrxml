@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="08e89f86-898b-498c-b7a5-d2beeebca214">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select c.cliente, p.pais, v.vendedor, e.fecha, d.producto, e.cantidad, e.cantidad*d.precio as Monto
+from envio e, cliente c, pais p, vendedor v, producto d
+where  c.idcliente=e.idcliente and p.idpais=e.idpais and v.idvendedor=e.idvendedor and d.idProducto=e.idProducto;]]>
+	</queryString>
+	<field name="cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pais" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vendedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="producto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Monto" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="135" height="79" uuid="af1200cb-b075-4e02-9947-cc2054635e60"/>
+				<imageExpression><![CDATA["web_logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Transparent" x="216" y="16" width="174" height="25" forecolor="#3333FF" uuid="d7c36cca-72db-484c-a5f3-4b5352d694a3"/>
+				<textElement>
+					<font fontName="Arial Black" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RIOS SOLUCIONS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="216" y="41" width="294" height="1" uuid="e2288fe4-9987-42e7-9522-840b0c3cdef6"/>
+			</line>
+			<staticText>
+				<reportElement x="275" y="42" width="235" height="23" forecolor="#999999" uuid="270b626e-561c-423e-a9f1-e6c0556c9571"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA["Una Solución a sus necesidades"]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="407" y="0" width="148" height="20" uuid="447483cc-5d7e-4b22-96a5-43540cedd8c3"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="555" height="20" uuid="33d8e19a-7009-4d5b-a42b-5b5a30ad044e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Reporte de ....]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="79" height="20" uuid="962ff5ca-ab1c-4170-89e4-6c6c90521fd9"/>
+				<textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="1" width="79" height="20" uuid="60e24d4b-5c6f-4e2d-aabf-066a122b478e"/>
+				<textFieldExpression><![CDATA[$F{pais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="1" width="79" height="20" uuid="91f000ce-723b-4ede-83be-26edb8520935"/>
+				<textFieldExpression><![CDATA[$F{vendedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="1" width="79" height="20" uuid="18c82558-23cd-4402-8269-bcdd9a4705f0"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="1" width="79" height="20" uuid="4a8d8329-f035-435c-a768-a9bf5cd4c993"/>
+				<textFieldExpression><![CDATA[$F{producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="1" width="79" height="20" uuid="e3bfe1b3-91ed-4772-a25b-9de82f503355"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="1" width="79" height="20" uuid="7b3fe6af-823f-4f4a-8612-38a684da3a36"/>
+				<textFieldExpression><![CDATA[$F{Monto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="44" width="555" height="1" uuid="af1f5691-7eff-4024-9531-ede1f6909b8b"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="430" y="3" width="80" height="20" uuid="c5728228-ce18-4dc5-961b-91fc2f177500"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="510" y="3" width="40" height="20" uuid="d1a8d676-ac0c-41d7-9a46-2763d9849d4e"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="3" width="555" height="15" uuid="7e3d167d-380f-4b2e-b11e-a0b742e7ac40"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT" size="11"/>
+				</textElement>
+				<text><![CDATA[Universidad Don Bosco]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="17" width="555" height="15" uuid="cfc9d247-26e5-41be-b70a-c4891f45ac80"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT" size="11"/>
+				</textElement>
+				<text><![CDATA[Examen Modulo 5, Programacion en JAVA]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
