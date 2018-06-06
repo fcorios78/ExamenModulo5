@@ -60,25 +60,29 @@ public class controlReportes implements Serializable {
 
     
 
-    public void generarReporte() throws JRException, IOException {
-        Reportes r = new Reportes();
-        Map parametros = new HashMap();
-        parametros.put("fecha1", fecha1);
-        parametros.put("fecha2", fecha2);
-        parametros.put("aeropuerto", aeropuerto);
-        r.generarReporte(parametros, tipo, "/reportes/ReporteReservaciones.jasper",
-                "Reporte");
-    }
-    
+//    public void generarReporte() throws JRException, IOException {
+//        Reportes r = new Reportes();
+//        Map parametros = new HashMap();
+//        parametros.put("fecha1", fecha1);
+//        parametros.put("fecha2", fecha2);
+//        parametros.put("aeropuerto", aeropuerto);
+//        r.generarReporte(parametros, tipo, "/reportes/ReporteReservaciones.jasper",
+//                "Reporte");
+//    }
+//    
     public void generarReporteSP() throws JRException, IOException {
         Reportes r = new Reportes();
         Map parametros = new HashMap();
+        parametros.put("fecha1", fecha1);
+        parametros.put("fecha2", fecha2);        
         r.generarReporte(parametros, tipo, "/reportes/ReporteDeVentas.jasper",
                 "Reporte");
     }
     public void generarReportexP() throws JRException, IOException {
         Reportes r = new Reportes();
         Map parametros = new HashMap();
+        parametros.put("fecha1", fecha1);
+        parametros.put("fecha2", fecha2);        
         r.generarReporte(parametros, tipo, "/reportes/ReporteDeVentasPorPais.jasper",
                 "Reporte");
     }
