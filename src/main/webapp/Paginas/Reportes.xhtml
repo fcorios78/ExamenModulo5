@@ -12,7 +12,14 @@
             <ui:define name="content">
                 <h:form id="frmVuelos">
                     <h:panelGrid columns="2" cellpadding="5">
-
+                        <p:outputLabel for="txtFecha1" value="Desde" />
+                        <p:calendar id="txtFecha1" pattern="d/M/y" required="true" requiredMessage="Por favor ingrese una fecha"
+                                    value="#{controlReportes.fecha1}"
+                                    showOn="button" />
+                        <p:outputLabel for="txtFecha2" value="Hasta" />
+                        <p:calendar id="txtFecha2" pattern="d/M/y" required="true"  requiredMessage="Por favor ingrese una fecha"
+                                    value="#{controlReportes.fecha2}"
+                                    showOn="button" />
                         <p:outputLabel for="cmbTipo" value="Tipo" />
                         <p:selectOneMenu id="cmbTipo"
                                          value="#{controlReportes.tipo}">
