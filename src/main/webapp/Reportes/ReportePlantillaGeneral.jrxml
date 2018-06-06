@@ -73,7 +73,7 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<image>
-				<reportElement x="0" y="0" width="135" height="79" uuid="af1200cb-b075-4e02-9947-cc2054635e60"/>
+				<reportElement x="14" y="1" width="120" height="64" uuid="af1200cb-b075-4e02-9947-cc2054635e60"/>
 				<imageExpression><![CDATA["C:\\Users\\fcori\\Documents\\NetBeansProjects\\EmpresaDeEnvios\\src\\main\\webapp\\img\\web_logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
@@ -101,21 +101,13 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="22" splitType="Stretch">
-			<staticText>
-				<reportElement x="1" y="0" width="555" height="20" uuid="33d8e19a-7009-4d5b-a42b-5b5a30ad044e"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true" isItalic="false"/>
-				</textElement>
-				<text><![CDATA[Reporte de ....]]></text>
-			</staticText>
-		</band>
+		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="21" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="21" splitType="Stretch">
+		<band height="43" splitType="Stretch">
 			<textField>
 				<reportElement x="1" y="1" width="100" height="20" uuid="e8524cc1-60cb-46a4-bd74-cf5ad6fc761a"/>
 				<textFieldExpression><![CDATA["Field"]]></textFieldExpression>
@@ -123,14 +115,10 @@
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch">
-			<line>
-				<reportElement x="0" y="44" width="555" height="1" uuid="af1f5691-7eff-4024-9531-ede1f6909b8b"/>
-			</line>
-		</band>
+		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="48" splitType="Stretch">
+		<band height="43" splitType="Stretch">
 			<textField>
 				<reportElement x="430" y="3" width="80" height="20" uuid="c5728228-ce18-4dc5-961b-91fc2f177500"/>
 				<textElement textAlignment="Right"/>
@@ -154,6 +142,9 @@
 				</textElement>
 				<text><![CDATA[Examen Modulo 5, Programacion en JAVA]]></text>
 			</staticText>
+			<line>
+				<reportElement x="0" y="42" width="555" height="1" uuid="af1f5691-7eff-4024-9531-ede1f6909b8b"/>
+			</line>
 		</band>
 	</pageFooter>
 	<summary>
